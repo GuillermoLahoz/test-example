@@ -1,6 +1,7 @@
 package org.iesfm.calculator;
 
 
+import org.iesfm.calculator.exception.NegativeNumberException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -27,5 +28,32 @@ public class CalculatorTests {
         Assert.assertEquals(-3, res);
     }
 
+    @Test
+    public void factorial3() throws NegativeNumberException {
+        // Preparación
+        int n = 3;
+        // Ejecución
+        int res = Calculator.factorial(n);
+        // Comprobaciones
+        Assert.assertEquals(6, res);
+    }
+
+    @Test
+    public void factorial0() throws NegativeNumberException {
+        // Preparación
+        int n = 0;
+        // Ejecución
+        int res = Calculator.factorial(n);
+        // Comprobaciones
+        Assert.assertEquals(1, res);
+    }
+
+    @Test(expected = NegativeNumberException.class)
+    public void factorialNegative() throws NegativeNumberException {
+        // Preparación
+        int n = -2;
+        // Ejecución
+        int res = Calculator.factorial(n);
+    }
 
 }
