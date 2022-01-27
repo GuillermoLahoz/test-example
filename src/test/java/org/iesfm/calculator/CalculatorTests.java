@@ -1,6 +1,5 @@
 package org.iesfm.calculator;
 
-
 import org.iesfm.calculator.exception.NegativeNumberException;
 import org.junit.Assert;
 import org.junit.Test;
